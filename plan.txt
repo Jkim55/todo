@@ -1,7 +1,11 @@
 Basic Express server on heroku
 Database provisioned
-ADD to-do item
-REMOVE to-do item
+
+seed local database with some todo items just for testing
+
+user can ADD to-do item
+user can mark todo items as completed which makes them go away forever aka REMOVE to-do item
+
 Create a readme.md
 
 

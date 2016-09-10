@@ -1,4 +1,5 @@
 // set up development and production server
+require('dotenv').config()
 
 module.exports = {
 
