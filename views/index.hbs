@@ -1,2 +1,33 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>My First To Do App</h1>
+<h3>Produced with Express js, pSQL, and Heroku DB</h3>
+
+<section class='display-todo'>
+  <ul>
+    {{#each items}}
+    <li>{{this.name}}</li>
+    <p>{{this.description}}</p>
+    {{/each}}
+  </ul>
+</section>
+
+<section class='create-todo'>
+  <h4>CREATE TO-DO ITEMs</h4>
+  <form class="add-item" action="/api/v1/items" method="post">
+    <div>
+      <label for="item-name">What's on the agenda?</label>
+    </div>
+    <div>
+      <input type="text" name="name" value="">            <!-- matching name to db col name -->
+    </div>
+    <div>
+      <label for="item-description">Bring on the details!</label>
+    </div>
+    <div>
+      <textarea name="description" rows="8" cols="40"></textarea>    <!-- matching name to db col name -->
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+  </form>
+
+</section>
