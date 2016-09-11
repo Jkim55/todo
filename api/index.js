@@ -29,5 +29,20 @@ router.post('/v1/items', (req, res, next)=>{
   })
 })
 
+router.get('/v1/items/delete/:id', (req, res, next)=>{
+  // console.log("the id is: ", req.params.id);
+  // res.json(req.params)
+  pg('todo').where('id', req.params.id).del()
+    .then((something)=>{
+      res.redirect('/')
+    })
+  .catch((err)=>{
+    console.error('An error in deleting row from DB')
+    next(err)
+  })
+})
+
+
+
 
 module.exports = router
